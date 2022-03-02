@@ -1,0 +1,15 @@
+<div class="wrapper">
+    <div id="formContent">
+  
+      <!-- Login Form -->
+      <form [formGroup] = "loginForm" (ngSubmit) = "onSubmit()">
+        <input type="text" id="login"  placeholder="your email" formControlName="email">
+        <span *ngIf="loginForm.controls['email'].errors?.required && loginForm.controls['email'].touched" style="color:red">Enter your email please </span>
+        <span *ngIf="loginForm.controls['email'].errors?.email && loginForm.controls['email'].touched" style="color:red">Enter valid email please </span>
+        <input type="text" id="password"  placeholder="password" formControlName="password">
+        <span *ngIf="loginForm.controls['password'].errors?.required && loginForm.controls['password'].touched" style="color:red">Enter your password please </span>
+
+        <input type="submit" [disabled]= "!loginForm.valid" class="fourth" value="Log In">
+      </form>
+    </div>
+  </div>

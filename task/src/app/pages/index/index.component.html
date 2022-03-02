@@ -1,0 +1,67 @@
+
+<div class="content">
+    <div class="container py-5">
+      <div class="d-flex justify-content-center">
+        <div class="col-8">
+          <ng-container *ngIf="!checkoutFlag">
+            <div class="row">
+              <div class="col-sm-6" *ngFor="let video of videoList">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="card-title">
+                      <div class="title-icon">
+                        <h6 class="title">{{video.title}} <span class="date">20 views</span></h6>
+                      </div>
+                      </div>
+                   <!--    <div class="video">
+                        <video controls (click)="toggleVideo()" #videoPlayer>
+                            <source src="{{video.url}}" type="video/mp4" />
+                            Browser not supported
+                        </video>
+                    </div> -->
+                      <div [ngClass]="!video.checkout? 'pointerevents': '' ">
+                        <iframe width="380" height="315" 
+                        [src]="video.url | safe: 'resourceUrl'">
+                       </iframe>
+                      </div>
+                      <button class="btn btn-primary" (click)="showCheckout(video.id)">watch now</button>                
+             
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="checkoutFlag">
+            <div class="row">
+                <div class="col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="card-title">
+                        <div class="title-icon">
+                          <h6 class="title">{{sindelVideo?.title}} <span class="views">20 views</span></h6>
+                        </div>
+                        </div>
+                        <div>
+                          {{sindelVideo?.price}} USD
+  
+                        </div>
+                         
+                      <div>
+                        <button class="btn btn-success" (click)="checkOut()">check Out</button>                
+                        <button class="btn btn-dark" (click)="backTOlist()" style="float:right">back TO List</button>                
+  
+                      </div>
+               
+                    </div>
+                  </div>
+                </div>
+              
+             
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  
+  
+</div>

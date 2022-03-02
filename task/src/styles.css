@@ -1,0 +1,71 @@
+.content{
+  padding-top:20px;
+}
+/* card style */
+.py-5{
+    background-color: #EEEEEE;
+}
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.card-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.title-icon{
+  display:flex;
+  flex-direction: row;
+}
+.title{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.icon{
+    background-color: #EEEEEE;
+    padding: 10px;
+    border-radius: 15px;
+    margin-right: 5px;
+}
+.views{
+  color: #80808087;
+  
+}
+.card-title p{
+  color: #FFD85C;
+}
+
+.applied-progress{
+  display:flex;
+  flex-direction: column;
+}
+.applied-lbl{
+  display: flex;
+}
+
+.progress {
+  height: 0.6rem!important;
+overflow: hidden;
+font-size: .75rem;
+background-color: #e9ecef;
+border-radius: 10rem;
+}
+
+.progress-bar {
+border-radius: 10px;
+}
+.applied-lbl p {
+  font-weight: 600;
+}
+.applied-lbl label {
+  opacity: 0.5;
+}
+.pointerevents{
+  pointer-events:none;
+}
